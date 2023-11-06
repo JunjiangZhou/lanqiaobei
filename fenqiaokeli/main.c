@@ -24,10 +24,11 @@ int main(int argc, const char * argv[]) {
     }
     int result=0;
     while (result<k&&min>0) {
+        result=0;
         for (int i=0; i<n; i++) {
-            result+=c[i][0]/min+c[i][1]/min;
+            result+=(c[i][0]/min)*(c[i][1]/min);
         }
-        min-=1;
+        if(result<k) min-=1;
     }
     printf("%d\n",min);
     return 0;
